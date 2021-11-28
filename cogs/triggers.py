@@ -7,6 +7,9 @@ class Triggers(commands.Cog, name= "Triggers"):
         self.bot = bot
 
 
+    @commands.Cog.listener()
+    async def on_message(self, message):
+        pass
 
 
 def setup(bot):
