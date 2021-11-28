@@ -5,6 +5,7 @@ class Triggers(commands.Cog, name= "Triggers"):
 
     def __init__(self,bot):
         self.bot = bot
+        self.triggers = ["world download"]
 
 
     @commands.Cog.listener()
