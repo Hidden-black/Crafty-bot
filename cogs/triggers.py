@@ -19,8 +19,12 @@ class Triggers(commands.Cog, name= "Triggers"):
 
 
     @commands.Cog.listener()
-    async def on_message(self, message):
-        pass
+    async def on_message(self, message: discord.Message):
+        if message.guild.id == CRAFTY_GUILD_ID:
+            if (self.crafty_guest_role in message.author.roles) and (self.crafty_gamer_role not in message.author.roles):
+                for trigger in self.triggers:
+                    if trigger message.content.lower():
+                        await message.reply("you need level 5 to access world downloads")
 
 
 def setup(bot):
