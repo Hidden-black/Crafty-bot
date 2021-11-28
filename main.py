@@ -1,18 +1,12 @@
 import os
-import sys
-import json
-import random
 import asyncio
 import aiohttp
-import typing
+import time
+import sys
 import discord
-import jishaku
-import requests
-from discord.ext import menus
-from discord.ext import tasks
-from datetime import *
+from datetime import datetime
 from discord.ext import commands
-
+import json
 
 
 def get_prefix(bot, message):
@@ -29,21 +23,14 @@ bot.owner_ids = [842950909159145493, 740906193312284715]
 bot.launch_time = datetime.utcnow()
 bot.help_command = None
 
-# class MyHelpCommand(commands.MinimalHelpCommand):
-#     async def send_pages(self):
-#         destination = self.get_destination()
-#         e = discord.Embed(colour = discord.Colour.from_hsv(random.random(), 1, 1), description='')
-        
-#         for page in self.paginator.pages:
-#             e.description += page
-#         await destination.send(embed=e)
-
-# bot.help_command = MyHelpCommand()
-
 os.environ["JISHAKU_FORCE_PAGINATOR"] = "True"
 
 extensions = [
-    'jishaku'
+    'jishaku',
+    'cogs.mod',
+    'cogs.games',
+    'cogs.triggers',
+    'cogs.help'
 ]
 
 if __name__ == "__main__":
