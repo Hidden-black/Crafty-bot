@@ -8,7 +8,6 @@ from datetime import datetime
 from discord.ext import commands
 import json
 
-
 def get_prefix(bot, message):
     try:
         with open('prefix.json', 'r') as f:
